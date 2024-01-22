@@ -14,3 +14,4 @@ immutabledict==4.1.0
 ml_collections
 jaxcam==0.1.1
 chex==0.1.85
+ffmpeg
