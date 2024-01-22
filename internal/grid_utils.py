@@ -127,7 +127,6 @@ class HashEncoding(nn.Module):  # TODO(barron): Rename this to just "NGP".
   # Defaults to 2 for the MipNeRF 360 "squash" space.
   bbox_scaling: Union[float, BboxType] = 2.0
   append_scale: bool = True  # Append an explicit scale feature.
-  use_triton_ops: bool = False  # Use Triton ops for hash resampling.
   jitter_coordinates: bool = False  # Randomly jitter coords by [-0.5, 0.5).
   # To retrieve the “neural” feature vector for a given 3D coordinate
   # x in the [0,1]^3 volume (which MipNeRF360 extends to an unbounded volume),
@@ -230,49 +229,6 @@ class HashEncoding(nn.Module):  # TODO(barron): Rename this to just "NGP".
       grid_values.append(values)
       grid_sizes.append(grid_size)
       grid_datastructures.append(datastructure)
-
-    if self.use_triton_ops:
-      if x_scale is not None:
-        raise ValueError(
-            f'Triton Ops do not support x_scale. Got x_scale: {x_scale}'
-        )
-      if per_level_fn != math.average_across_multisamples:
-        raise ValueError(
-            'Trion Ops require per_level_fn to be'
-            f' math.average_across_multisamples. Got: {per_level_fn}'
-        )
-      total_grid = jnp.concatenate(
-          [grid.reshape(-1, grid.shape[-1]) for grid in grid_values], axis=0
-      )
-      side_or_hash_table_sizes = [
-          grid_size if datastructure == 'grid' else self.hash_map_size
-          for grid_size, datastructure in zip(grid_sizes, grid_datastructures)
-      ]
-      voxel_grids_count = sum(int(x == 'grid') for x in grid_datastructures)
-      warp_scales = jnp.array(grid_sizes, dtype=x.dtype)
-
-      batch_size, rays_samples, spiral_samples, _ = x.shape
-
-      # Triton kernel doesn't have the backward pass, so fallback to CUDA during
-      # training.
-      implementation = (
-          triton_grids_interface.VoxelAndHashResampleImplementation.CUDA
-          if train
-          else triton_grids_interface.VoxelAndHashResampleImplementation.TRITON
-      )
-
-      result = triton_grids_interface.voxel_and_hash_resample(
-          total_grid,
-          side_or_hash_table_sizes,
-          voxel_grids_count,
-          warp_scales,
-          x.reshape(batch_size * rays_samples, spiral_samples, 3),
-          features_scale=self.precondition_scaling,
-          implementation=implementation,
-      )
-      return result.reshape(
-          batch_size, rays_samples, self.num_features * len(self.grid_sizes)
-      )
 
     for values, grid_size, datastructure in zip(
         grid_values, grid_sizes, grid_datastructures
