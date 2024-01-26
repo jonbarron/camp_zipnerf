@@ -1291,7 +1291,7 @@ class LLFF(Dataset):
           'meters_per_colmap': meters_per_colmap,
           'colmap_to_world_transform': self.colmap_to_world_transform.tolist(),
       }
-      with gfile.Open(
+      with open(
           os.path.join(self.data_dir, 'calibration.json'), 'w'
       ) as fp:
         fp.write(json.dumps(to_save))
