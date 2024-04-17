@@ -38,9 +38,7 @@ from . import image_utils
 from . import utils
 import jax
 import numpy as np
-
-# This is ugly, but it works.
-from pycolmap import pycolmap
+import pycolmap
 
 
 gin.config.external_configurable(
