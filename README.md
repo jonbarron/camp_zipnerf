@@ -15,11 +15,8 @@ conda activate camp_zipnerf
 conda install pip
 pip install --upgrade pip
 
-# Manually install rmbrualla's `pycolmap` (don't use pip's! It's different).
-git clone https://github.com/rmbrualla/pycolmap.git
-pushd pycolmap
-pip install -e .
-popd
+# Install rmbrualla's `pycolmap` (don't use pip's! It's different).
+pip install git+https://github.com/rmbrualla/pycolmap.git
 
 # Install camp_zipnerf.
 git clone https://github.com/jonbarron/camp_zipnerf.git
