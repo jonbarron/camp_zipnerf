@@ -22,7 +22,7 @@ CHECKPOINT_DIR=~/tmp/zipnerf/blender
 
 for SCENE in chair drums ficus hotdog lego materials mic ship
 do
-  python -m train \
+  python -m camp_zipnerf.train \
     --gin_configs=configs/zipnerf/blender.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \
     --gin_bindings="Config.checkpoint_dir = '${CHECKPOINT_DIR}/${SCENE}'"
