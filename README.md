@@ -70,7 +70,7 @@ You can mix and match these configurations with the base NeRF configs (e.g.,
 pipeline like this:
 
 ```bash
-python -m train \
+python -m camp_zipnerf.train \
     --gin_configs=configs/zipnerf/360.gin \
     --gin_configs=configs/camp/camera_optim.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \
