@@ -14,8 +14,5 @@
 
 #!/bin/bash
 
-# Get directory containing this script.
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 # Run all tests in the "tests/" folder with a filename ending with "_tests.py".
-python3 -m unittest discover -s "${SCRIPT_DIR}/tests" -p '*_test.py'
+python3 -m unittest discover -s "tests" -p '*_test.py'

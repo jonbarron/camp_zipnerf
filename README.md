@@ -23,12 +23,11 @@ popd
 
 # Install camp_zipnerf.
 git clone https://github.com/jonbarron/camp_zipnerf.git
-pushd camp_zipnerf
+cd camp_zipnerf
 pip install -e .
-popd
 
 # Confirm that all the unit tests pass.
-./camp_zipnerf/scripts/run_all_unit_tests.sh
+./scripts/run_all_unit_tests.sh
 ```
 
 You'll probably also need to [update your JAX installation to support GPUs or TPUs](https://jax.readthedocs.io/en/latest/installation.html).
