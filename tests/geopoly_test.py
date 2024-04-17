@@ -19,7 +19,7 @@ import itertools
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import geopoly
+from camp_zipnerf.internal import geopoly
 import jax
 from jax import random
 import numpy as np

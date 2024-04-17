@@ -17,7 +17,7 @@
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import geometry
+from camp_zipnerf.internal import geometry
 from jax import random
 import numpy as np
 

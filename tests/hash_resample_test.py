@@ -19,7 +19,7 @@ import functools
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import hash_resample
+from camp_zipnerf.internal import hash_resample
 import numpy as np
 
 

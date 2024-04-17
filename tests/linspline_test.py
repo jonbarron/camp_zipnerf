@@ -20,9 +20,9 @@ import functools
 from absl.testing import absltest
 from absl.testing import parameterized
 import chex
-from internal import linspline
-from internal import math
-from internal import utils
+from camp_zipnerf.internal import linspline
+from camp_zipnerf.internal import math
+from camp_zipnerf.internal import utils
 import jax
 from jax import random
 from jax.experimental import checkify

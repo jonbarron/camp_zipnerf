@@ -19,7 +19,7 @@ import functools
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import spin_math
+from camp_zipnerf.internal import spin_math
 import jax
 from jax import numpy as jnp
 from jax import random

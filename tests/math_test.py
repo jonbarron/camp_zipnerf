@@ -20,7 +20,7 @@ import functools
 from absl.testing import absltest
 from absl.testing import parameterized
 import chex
-from internal import math
+from camp_zipnerf.internal import math
 import jax
 from jax import random
 import jax.numpy as jnp

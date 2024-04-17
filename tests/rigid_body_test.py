@@ -22,9 +22,9 @@ from jax import numpy as jnp
 from jax import random
 import numpy as np
 
-from internal import spin_math
-from internal import quaternion
-from internal import rigid_body
+from camp_zipnerf.internal import spin_math
+from camp_zipnerf.internal import quaternion
+from camp_zipnerf.internal import rigid_body
 from absl.testing import absltest
 from absl.testing import parameterized
 

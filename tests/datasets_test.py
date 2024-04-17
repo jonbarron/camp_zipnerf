@@ -16,9 +16,9 @@
 """Tests for datasets."""
 
 from absl.testing import absltest
-from internal import camera_utils
-from internal import configs
-from internal import datasets
+from camp_zipnerf.internal import camera_utils
+from camp_zipnerf.internal import configs
+from camp_zipnerf.internal import datasets
 from jax import random
 import numpy as np
 

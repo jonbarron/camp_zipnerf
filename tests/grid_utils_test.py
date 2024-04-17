@@ -20,7 +20,7 @@ import functools
 from absl.testing import absltest
 from absl.testing import parameterized
 import chex
-from internal import grid_utils
+from camp_zipnerf.internal import grid_utils
 from jax import random
 from jax.experimental import checkify
 import jax.numpy as jnp
