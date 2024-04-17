@@ -7,10 +7,6 @@ This repository contains [JAX](https://github.com/google/jax) code for two paper
 ## Setup
 
 ```
-# Clone the repo.
-git clone https://github.com/jonbarron/camp_zipnerf.git
-cd camp_zipnerf
-
 # Make a conda environment.
 conda create --name camp_zipnerf python=3.11
 conda activate camp_zipnerf
@@ -19,14 +15,20 @@ conda activate camp_zipnerf
 conda install pip
 pip install --upgrade pip
 
-# Install requirements.
-pip install -r requirements.txt
-
 # Manually install rmbrualla's `pycolmap` (don't use pip's! It's different).
-git clone https://github.com/rmbrualla/pycolmap.git ./internal/pycolmap
+git clone https://github.com/rmbrualla/pycolmap.git
+pushd pycolmap
+pip install -e .
+popd
+
+# Install camp_zipnerf.
+git clone https://github.com/jonbarron/camp_zipnerf.git
+pushd camp_zipnerf
+pip install -e .
+popd
 
 # Confirm that all the unit tests pass.
-./scripts/run_all_unit_tests.sh
+./camp_zipnerf/scripts/run_all_unit_tests.sh
 ```
 
 You'll probably also need to [update your JAX installation to support GPUs or TPUs](https://jax.readthedocs.io/en/latest/installation.html).
