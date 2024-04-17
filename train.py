@@ -27,25 +27,19 @@ import flax
 from flax.metrics import tensorboard
 from flax.training import checkpoints
 import gin
-from internal import camera_utils
-from internal import configs
-from internal import datasets
-from internal import image_utils
-from internal import models
-from internal import train_utils
-from internal import utils
-from internal import vis
+from .internal import camera_utils
+from .internal import configs
+from .internal import datasets
+from .internal import image_utils
+from .internal import models
+from .internal import train_utils
+from .internal import utils
+from .internal import vis
 import jax
 from jax import random
 import jax.numpy as jnp
 import jaxcam
 import numpy as np
-
-
-os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION'] = '0.65'
-
-configs.define_common_flags()
-jax.config.parse_flags_with_absl()
 
 TIME_PRECISION = 1000  # Internally represent integer times in milliseconds.
 
@@ -553,5 +547,9 @@ def main(unused_argv):
 
 
 if __name__ == '__main__':
+  # Allow JAX to reserve up to 65% of GPU memory.
+  os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION'] = '0.65'
+  configs.define_common_flags()
+  jax.config.parse_flags_with_absl()
   with gin.config_scope('train'):
     app.run(main)

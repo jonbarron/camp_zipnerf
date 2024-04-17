@@ -15,8 +15,8 @@
 
 """Tools for manipulating coordinate spaces and distances along rays."""
 
-from internal import geopoly
-from internal import math
+from . import geopoly
+from . import math
 import jax
 from jax import random
 import jax.numpy as jnp

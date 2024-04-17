@@ -18,7 +18,7 @@
 
 from typing import Optional, Union
 
-from internal import math
+from . import math
 import jax
 from jax import numpy as jnp
 import optax

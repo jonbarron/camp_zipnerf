@@ -22,16 +22,16 @@ from typing import Any, Callable, List, Mapping, MutableMapping, Optional, Tuple
 from absl import logging
 from flax import linen as nn
 import gin
-from internal import configs
-from internal import coord
-from internal import geopoly
-from internal import grid_utils
-from internal import image_utils
-from internal import math
-from internal import ref_utils
-from internal import render
-from internal import stepfun
-from internal import utils
+from . import configs
+from . import coord
+from . import geopoly
+from . import grid_utils
+from . import image_utils
+from . import math
+from . import ref_utils
+from . import render
+from . import stepfun
+from . import utils
 import jax
 from jax import random
 import jax.numpy as jnp

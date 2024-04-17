@@ -18,8 +18,8 @@
 from typing import Union
 
 import chex
-from internal import rigid_body
-from internal import spin_math
+from . import rigid_body
+from . import spin_math
 import jax
 from jax import numpy as jnp
 from jax import random

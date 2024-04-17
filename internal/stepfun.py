@@ -23,9 +23,9 @@ All input/output step functions are assumed to be aligned along the last axis.
 values that *integrate* to <= 1.
 """
 
-from internal import linspline
-from internal import math
-from internal import utils
+from . import linspline
+from . import math
+from . import utils
 import jax
 import jax.numpy as jnp
 import numpy as np

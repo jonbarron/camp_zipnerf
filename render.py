@@ -26,20 +26,17 @@ from absl import logging
 import flax
 from flax.training import checkpoints
 import gin
-from internal import configs
-from internal import datasets
-from internal import image_io
-from internal import models
-from internal import train_utils
-from internal import utils
-from internal import videos_utils
+from .internal import configs
+from .internal import datasets
+from .internal import image_io
+from .internal import models
+from .internal import train_utils
+from .internal import utils
+from .internal import videos_utils
 import jax
 from jax import random
 import jax.numpy as jnp
 import numpy as np
-
-configs.define_common_flags()
-jax.config.parse_flags_with_absl()
 
 
 def render_pipeline(config):
@@ -195,5 +192,7 @@ def main(unused_argv):
 
 
 if __name__ == '__main__':
+  configs.define_common_flags()
+  jax.config.parse_flags_with_absl()
   with gin.config_scope('eval'):  # Use the same scope as eval.py
     app.run(main)

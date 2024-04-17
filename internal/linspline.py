@@ -17,8 +17,8 @@
 
 import functools
 
-from internal import math
-from internal import utils
+from . import math
+from . import utils
 import jax
 from jax.experimental import checkify
 import jax.numpy as jnp

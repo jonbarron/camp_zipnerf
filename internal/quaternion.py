@@ -23,7 +23,7 @@ Functions in this module support both batched and unbatched quaternions.
 Some parts have been adapted from Ceres.
 """
 
-from internal import spin_math
+from . import spin_math
 from jax import numpy as jnp
 from jax.numpy import linalg
 

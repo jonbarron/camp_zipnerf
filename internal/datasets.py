@@ -31,18 +31,16 @@ from absl import logging
 import chex
 from etils import epath
 import gin
-from internal import camera_utils
-from internal import configs
-from internal import image_io
-from internal import image_utils
-from internal import utils
+from . import camera_utils
+from . import configs
+from . import image_io
+from . import image_utils
+from . import utils
 import jax
 import numpy as np
 
 # This is ugly, but it works.
-sys.path.insert(0, 'internal/pycolmap')
-sys.path.insert(0, 'internal/pycolmap/pycolmap')
-import pycolmap
+from pycolmap import pycolmap
 
 
 gin.config.external_configurable(

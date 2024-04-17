@@ -18,7 +18,7 @@
 from typing import Any, Dict
 
 import cv2
-from internal import utils
+from . import utils
 import numpy as np
 from PIL import ExifTags
 from PIL import Image

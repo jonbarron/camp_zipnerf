@@ -22,13 +22,13 @@ from typing import Final, List, Mapping, Optional, Text, Tuple, TypeAlias
 
 from absl import logging
 import chex
-from internal import configs
-from internal import geometry
-from internal import math
-from internal import rigid_body
-from internal import spin_math
-from internal import stepfun
-from internal import utils
+from . import configs
+from . import geometry
+from . import math
+from . import rigid_body
+from . import spin_math
+from . import stepfun
+from . import utils
 import jax
 from jax import random
 import jax.numpy as jnp
