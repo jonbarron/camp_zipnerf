@@ -20,10 +20,10 @@ import os
 from absl import flags
 from absl import logging
 from etils import epath
-from internal import configs
-from internal import image_io
-from internal import math
-from internal import utils
+from . import configs
+from . import image_io
+from . import math
+from . import utils
 from matplotlib import cm
 import mediapy as media
 import numpy as np

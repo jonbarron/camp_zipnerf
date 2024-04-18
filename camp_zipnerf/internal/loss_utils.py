@@ -15,9 +15,9 @@
 
 """Loss functions for regularization."""
 
-from internal import math
-from internal import ref_utils
-from internal import stepfun
+from . import math
+from . import ref_utils
+from . import stepfun
 import jax
 import jax.numpy as jnp
 

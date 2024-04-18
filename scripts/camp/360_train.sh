@@ -23,7 +23,7 @@ CHECKPOINT_DIR=~/tmp/camp/360
 # Outdoor scenes.
 for SCENE in bicycle flowerbed gardenvase stump treehill
 do
-  python -m train \
+  python -m camp_zipnerf.train \
     --gin_configs=configs/zipnerf/360.gin \
     --gin_configs=configs/camp/camera_optim.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \
@@ -33,7 +33,7 @@ done
 # Indoor scenes.
 for SCENE in fulllivingroom kitchencounter kitchenlego officebonsai
 do
-  python -m train \
+  python -m camp_zipnerf.train \
     --gin_configs=configs/zipnerf/360.gin \
     --gin_configs=configs/camp/camera_optim.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \

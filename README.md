@@ -7,10 +7,6 @@ This repository contains [JAX](https://github.com/google/jax) code for two paper
 ## Setup
 
 ```
-# Clone the repo.
-git clone https://github.com/jonbarron/camp_zipnerf.git
-cd camp_zipnerf
-
 # Make a conda environment.
 conda create --name camp_zipnerf python=3.11
 conda activate camp_zipnerf
@@ -19,11 +15,13 @@ conda activate camp_zipnerf
 conda install pip
 pip install --upgrade pip
 
-# Install requirements.
-pip install -r requirements.txt
+# Install rmbrualla's `pycolmap` (don't use pip's! It's different).
+pip install git+https://github.com/rmbrualla/pycolmap.git
 
-# Manually install rmbrualla's `pycolmap` (don't use pip's! It's different).
-git clone https://github.com/rmbrualla/pycolmap.git ./internal/pycolmap
+# Install camp_zipnerf.
+git clone https://github.com/jonbarron/camp_zipnerf.git
+cd camp_zipnerf
+pip install -e .
 
 # Confirm that all the unit tests pass.
 ./scripts/run_all_unit_tests.sh
@@ -72,7 +70,7 @@ You can mix and match these configurations with the base NeRF configs (e.g.,
 pipeline like this:
 
 ```bash
-python -m train \
+python -m camp_zipnerf.train \
     --gin_configs=configs/zipnerf/360.gin \
     --gin_configs=configs/camp/camera_optim.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \

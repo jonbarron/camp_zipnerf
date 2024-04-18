@@ -23,9 +23,9 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Type, Union
 from absl import flags
 import flax
 import gin
-from internal import camera_delta
-from internal import math
-from internal import utils
+from . import camera_delta
+from . import math
+from . import utils
 import jax
 import jax.numpy as jnp
 import optax

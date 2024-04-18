@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camp_zipnerf"
+version = "0.0.1"
+dependencies = [
+    "chex==0.1.85",
+    "dm-pix==0.4.2",
+    "ffmpeg",
+    "flax==0.7.5",
+    "gin-config==0.5.0",
+    "immutabledict==4.1.0",
+    "jax==0.4.23",
+    "jaxcam==0.1.1",
+    "jaxlib==0.4.23",
+    "mediapy==1.2.0",
+    "ml_collections",
+    "numpy==1.26.3",
+    "opencv-python==4.9.0.80",
+    "pillow==10.2.0",
+    "rawpy==0.19.0",
+    "scipy==1.11.0",
+    "tensorboard==2.15.1",
+    "tensorflow==2.15.0.post1",
+]
+authors = [
+    {name = "Jonathan T. Barron"},
+]
+description = "Official implementation of Zip-NeRF."
+
+license = {file = "LICENSE"}
+readme = "README.md"
+
+[tool.setuptools]
+packages = ["camp_zipnerf"]  # only publish one folder: "camp_zipnerf"
+

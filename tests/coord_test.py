@@ -21,10 +21,10 @@ import itertools
 from absl.testing import absltest
 from absl.testing import parameterized
 import chex
-from internal import coord
-from internal import math
-from internal import render
-from internal import utils
+from camp_zipnerf.internal import coord
+from camp_zipnerf.internal import math
+from camp_zipnerf.internal import render
+from camp_zipnerf.internal import utils
 import jax
 from jax import random
 import jax.numpy as jnp

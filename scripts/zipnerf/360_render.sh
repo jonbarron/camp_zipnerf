@@ -22,7 +22,7 @@ CHECKPOINT_DIR=~/tmp/zipnerf/360
 
 for SCENE in bicycle flowerbed gardenvase stump treehill fulllivingroom kitchencounter kitchenlego officebonsai
 do
-  python -m render \
+  python -m camp_zipnerf.render \
     --gin_configs=configs/zipnerf/360.gin \
     --gin_bindings="Config.data_dir = '${DATA_DIR}/${SCENE}'" \
     --gin_bindings="Config.checkpoint_dir = '${CHECKPOINT_DIR}/${SCENE}'" \

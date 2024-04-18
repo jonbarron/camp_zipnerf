@@ -18,7 +18,7 @@
 import jax.numpy as jnp
 from matplotlib import cm
 
-from internal import stepfun
+from . import stepfun
 
 
 def colorize(

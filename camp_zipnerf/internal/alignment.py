@@ -23,13 +23,13 @@ from absl import logging
 import flax
 from flax.training.train_state import TrainState
 import gin
-from internal import camera_utils
-from internal import configs
-from internal import datasets
-from internal import image_utils
-from internal import models
-from internal import rigid_body
-from internal import spin_math
+from . import camera_utils
+from . import configs
+from . import datasets
+from . import image_utils
+from . import models
+from . import rigid_body
+from . import spin_math
 import jax
 from jax import random
 import jax.numpy as jnp

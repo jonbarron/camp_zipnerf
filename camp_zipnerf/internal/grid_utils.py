@@ -26,9 +26,9 @@ from typing import Union
 
 from flax import linen as nn
 import gin
-from internal import hash_resample
-from internal import math
-from internal import resample
+from . import hash_resample
+from . import math
+from . import resample
 import jax
 from jax import random
 import jax.numpy as jnp

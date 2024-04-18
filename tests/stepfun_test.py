@@ -17,7 +17,7 @@
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import stepfun
+from camp_zipnerf.internal import stepfun
 import jax
 from jax import random
 import jax.numpy as jnp

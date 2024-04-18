@@ -24,11 +24,11 @@ import chex
 from flax import linen as nn
 import gin
 import immutabledict
-from internal import coord
-from internal import geometry
-from internal import math as mipnerf360_math
-from internal import rigid_body
-from internal import spin_math
+from . import coord
+from . import geometry
+from . import math as mipnerf360_math
+from . import rigid_body
+from . import spin_math
 import jax
 from jax import random
 import jax.numpy as jnp

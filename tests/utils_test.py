@@ -18,7 +18,7 @@
 import time
 
 from absl.testing import absltest
-from internal import utils
+from camp_zipnerf.internal import utils
 import numpy as np
 
 

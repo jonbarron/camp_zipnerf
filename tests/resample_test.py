@@ -19,7 +19,7 @@ import functools
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import resample
+from camp_zipnerf.internal import resample
 import jax
 import jax.numpy as jnp
 import numpy as np

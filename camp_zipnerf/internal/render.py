@@ -19,8 +19,8 @@ import jax
 import jax.numpy as jnp
 import jax.scipy as jsp
 
-from internal import math
-from internal import stepfun
+from . import math
+from . import stepfun
 
 
 def lift_gaussian(d, t_mean, t_var, r_var, diag):

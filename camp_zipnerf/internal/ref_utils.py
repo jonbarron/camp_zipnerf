@@ -17,7 +17,7 @@
 
 import math
 
-from internal import math as math_lib
+from . import math as math_lib
 import jax.numpy as jnp
 import numpy as np
 

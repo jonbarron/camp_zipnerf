@@ -14,9 +14,5 @@
 
 #!/bin/bash
 
-for file in "tests"/*.py; do
-    filename=$(basename "$file")
-
-    echo Running $filename
-    python -m unittest "$file"
-done
+# Run all tests in the "tests/" folder with a filename ending with "_tests.py".
+python3 -m unittest discover -s "tests" -p '*_test.py'

@@ -29,8 +29,8 @@ See:
 
 from typing import Tuple
 
-from internal import quaternion as quat_lib
-from internal import spin_math
+from . import quaternion as quat_lib
+from . import spin_math
 import jax
 from jax import numpy as jnp
 import optax

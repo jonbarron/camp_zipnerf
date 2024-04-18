@@ -18,8 +18,8 @@
 from absl.testing import absltest
 from absl.testing import parameterized
 import chex
-from internal import camera_utils
-from internal import utils
+from camp_zipnerf.internal import camera_utils
+from camp_zipnerf.internal import utils
 from jax import random
 import jax.numpy as jnp
 import numpy as np

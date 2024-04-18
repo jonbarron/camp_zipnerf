@@ -20,7 +20,7 @@ import math
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from internal import quaternion
+from camp_zipnerf.internal import quaternion
 from jax import random
 import jax.numpy as jnp
 import numpy as np

@@ -18,8 +18,8 @@
 from absl.testing import absltest
 from absl.testing import parameterized
 import flax
-from internal import configs
-from internal import train_utils
+from camp_zipnerf.internal import configs
+from camp_zipnerf.internal import train_utils
 
 
 class TrainUtilsTest(parameterized.TestCase):

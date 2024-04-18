@@ -23,16 +23,16 @@ import chex
 import flax
 from flax.core.scope import FrozenVariableDict
 from flax.training.train_state import TrainState
-from internal import camera_utils
-from internal import configs
-from internal import datasets
-from internal import grid_utils
-from internal import image_utils
-from internal import loss_utils
-from internal import math
-from internal import models
-from internal import ref_utils
-from internal import utils
+from . import camera_utils
+from . import configs
+from . import datasets
+from . import grid_utils
+from . import image_utils
+from . import loss_utils
+from . import math
+from . import models
+from . import ref_utils
+from . import utils
 import jax
 from jax import random
 import jax.numpy as jnp
