@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "camp_zipnerf"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
     "chex==0.1.85",
     "dm-pix==0.4.2",
@@ -33,6 +33,7 @@ description = "Official implementation of Zip-NeRF."
 license = {file = "LICENSE"}
 readme = "README.md"
 
-[tool.setuptools]
-packages = ["camp_zipnerf"]  # only publish one folder: "camp_zipnerf"
+[tool.setuptools.packages.find]
+where = [""]
+include = ["camp_zipnerf*"]  # only publish one folder: "camp_zipnerf"
 

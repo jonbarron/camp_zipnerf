@@ -126,3 +126,15 @@ class MetricHarness:
 
     # Apply the name function and cast all metrics down to a scalar float.
     return {name_fn(k): float(v) for (k, v) in metrics.items()}
+
+
+def tiled_ssim(a, b, **kwargs):
+  """Compute SSIMs on a stack of image tiles of size (..., x, y, c)."""
+  # Instead of the usual SSIM, which convolves with a Gaussian blur and returns
+  # the average SSIM of each pixel, here we're just using the average of the
+  # whole patch as the blur function. This gives us a cheap tile-based SSIM
+  # alternative that behaves similarly to SSIM with a box filter evaluated
+  # only once per patch.
+  filter_fn = lambda z: jnp.mean(z, axis=[-3, -2], keepdims=True)
+  return dm_pix.ssim(a, b, filter_fn=filter_fn, **kwargs)
+
